@@ -1,3 +1,9 @@
+// ===== Animation on Scroll ====
+window.addEventListener("load", function() {
+    AOS.init();
+});
+
+
 $(document).ready(function() {
     // Fixed Header
     $(window).scroll(function() {
