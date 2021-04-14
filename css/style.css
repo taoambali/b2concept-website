@@ -24,6 +24,7 @@ body {
     line-height: 1.5;
     font-size: 1rem;
     background-color: #f3f2f1;
+    overflow-x: hidden;
 
 }
 
@@ -199,12 +200,6 @@ header.fixed .nav ul li a:hover,
 
 /* Responsive */
 @media (max-width: 767px) {
-    .header {
-        /* background-color: purple; */
-        /* position: fixed; */
-        /* padding: 8px 0; */
-    }
-
     .header .nav-toggle {
         display: grid;
         /* margin-right: 24px; */
@@ -335,17 +330,17 @@ header.fixed .nav ul li a:hover,
 
 }
 
+.about .about-content .fas {
+    font-size: 1.1rem;
+    color: green;
+}
+
 /* ==== About Responsive ==== */
 @media (max-width: 850px) {
     .about .grid-container {
         grid-template-columns: 1fr;
     }
 
-    .about .about-img .img-box {
-        /* width: 80%; */
-        /* display: grid; */
-        /* place-items: center; */
-    }
 
 }
 
@@ -354,11 +349,6 @@ header.fixed .nav ul li a:hover,
 .choose {
     padding: 80px 0 0;
     /* background: red; */
-}
-
-.choose .choose-container {
-    /* background-color: orange; */
-    /* padding-top: 1rem; */
 }
 
 .choose .choose-content {
@@ -437,13 +427,48 @@ header.fixed .nav ul li a:hover,
 }
 
 .services .service-inner {
+    position: relative;
+    cursor: pointer;
     text-align: center;
-    transform: translateY(0);
+    /* transform: translateY(0); */
     transition: all 0.5s ease-in-out;
 }
 
 .services .service-inner .img-box {
+    position: relative;
     transition: all 0.5s ease-in-out;
+}
+
+.services .service-inner .img-box .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    /* color: orange; */
+    justify-content: center;
+    transition: all 0.5 ease-in-out;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* background-color: red; */
+
+}
+
+.services .service-inner .img-box .overlay h4 {
+    color: #fff;
+    font-size: 20px;
+    transform: translateY(30px);
+    transition: all 0.5s ease-in-out;
+}
+
+.services .service-inner .img-box:hover .overlay {
+    opacity: 1;
+}
+
+.services .service-inner .img-box:hover .overlay h4 {
+    transform: translateY(0);
 }
 
 .services .service-inner h3 {
@@ -452,10 +477,6 @@ header.fixed .nav ul li a:hover,
     font-size: 24px;
     color: green;
     transition: all 0.5s ease-in-out;
-}
-
-.services .service-inner:hover {
-    transform: translateY(-12px);
 }
 
 /* ==== Services Responsive ==== */
