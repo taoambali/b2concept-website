@@ -75,7 +75,7 @@ img {
     font-weight: 700;
     margin: 0;
     position: relative;
-    overflow-x: auto;
+    /* overflow-x: auto; */
 }
 
 .section-title h2::before {
@@ -88,7 +88,7 @@ img {
     height: 6px;
     transform: translateX(-50%);
     background-color: var(--primary-color);
-    overflow-x: auto;
+    overflow-x: visible !important;
 }
 
 .btn {
@@ -305,18 +305,22 @@ header.fixed .nav ul li a:hover,
     padding: 80px 0 0;
 }
 
+.choose .choose-container {
+    overflow-x: visible !important;
+}
+
 .choose .choose-content {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 1.5rem;
     text-align: center;
-    overflow-x: auto;
+    overflow-x: visible !important;
 }
 
 .choose .choose-inner {
     padding: 1rem;
     transition: all 0.5s ease-in-out;
-    overflow-x: auto;
+    overflow-x: visible !important;
 }
 
 .choose .choose-inner:hover {
@@ -578,7 +582,7 @@ header.fixed .nav ul li a:hover,
 .contact .contact-info .section-title h2::before {
     left: 0;
     transform: translateX(0);
-    overflow-x: auto;
+    overflow-x: visible important;
 }
 
 .contact .contact-info .text {
@@ -718,6 +722,11 @@ header.fixed .nav ul li a:hover,
     }
 }
 
+@media (max-width: 768px) {
+    .contact .contact-container {
+        grid-template-columns: 1fr;
+    }
+    
 @media (max-width: 768px) {
     .contact .contact-container {
         grid-template-columns: 1fr;
