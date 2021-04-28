@@ -66,6 +66,7 @@ img {
     max-width: 100%;
     margin-bottom: 32px;
     text-align: center;
+    /* background-color: orange; */
 }
 
 .section-title h2 {
@@ -74,21 +75,29 @@ img {
     color: #000;
     font-weight: 700;
     margin: 0;
-    position: relative;
+    /* position: relative; */
     /* overflow-x: auto; */
 }
 
-.section-title h2::before {
-    content: "";
-    box-sizing: border-box;
-    position: absolute;
-    left: 50%;
-    bottom: -6px;
+@media (max-width: 450px) {
+    .section-title h2 {
+        /* display: inline-block; */
+        font-size: 34px;
+    }
+}
+
+.section-title .divider {
+    /* content: ""; */
+    /* box-sizing: border-box; */
+    /* position: absolute; */
+    /* left: 50%; */
+    /* bottom: -6px; */
     width: 80px;
     height: 6px;
-    transform: translateX(-50%);
+    /* transform: translateX(-50%); */
     background-color: var(--primary-color);
-    overflow-x: visible !important;
+    margin: auto;
+    /* overflow-x: visible !important; */
 }
 
 .btn {
@@ -305,22 +314,22 @@ header.fixed .nav ul li a:hover,
     padding: 80px 0 0;
 }
 
-.choose .choose-container {
+/* .choose .choose-container {
     overflow-x: visible !important;
-}
+} */
 
 .choose .choose-content {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 1.5rem;
     text-align: center;
-    overflow-x: visible !important;
+    /* overflow-x: visible !important; */
 }
 
 .choose .choose-inner {
     padding: 1rem;
     transition: all 0.5s ease-in-out;
-    overflow-x: visible !important;
+    /* overflow-x: visible !important; */
 }
 
 .choose .choose-inner:hover {
@@ -579,10 +588,11 @@ header.fixed .nav ul li a:hover,
     text-align: left;
 }
 
-.contact .contact-info .section-title h2::before {
-    left: 0;
-    transform: translateX(0);
-    overflow-x: visible important;
+.contact .contact-info .section-title .divider {
+    /* left: 0; */
+    /* transform: translateX(0); */
+    /* overflow-x: visible important; */
+    margin: 0;
 }
 
 .contact .contact-info .text {
@@ -601,7 +611,7 @@ header.fixed .nav ul li a:hover,
     color: #fff;
     font-weight: 500;
     font-size: 40px;
-    line-height: 1;
+    /* line-height: 1; */
     margin-bottom: 1.8rem;
 }
 
@@ -722,11 +732,6 @@ header.fixed .nav ul li a:hover,
     }
 }
 
-@media (max-width: 768px) {
-    .contact .contact-container {
-        grid-template-columns: 1fr;
-    }
-    
 @media (max-width: 768px) {
     .contact .contact-container {
         grid-template-columns: 1fr;
