@@ -167,7 +167,8 @@ header.fixed .nav ul li a:hover,
 /* ==== Header Responsive ==== */
 @media (max-width: 767px) {
     .header .nav-toggle {
-        display: grid;
+        /* display: grid; */
+        display: none;
     }
 
     .header .nav {
