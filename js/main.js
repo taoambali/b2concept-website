@@ -9,13 +9,6 @@ window.addEventListener("load", function() {
     });
 });
 
-// ==== Preloader ====
-$(window).on("load",function(){
-    $(".preloader").addClass("loaded");
- })
-
-
-
 $(document).ready(function() {
     // Fixed Header
     $(window).scroll(function() {
