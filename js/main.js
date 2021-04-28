@@ -1,7 +1,19 @@
+let index = 0;
+const totalWorkItems = $(".service-inner").length;
+console.log(totalWorkItems)
+
 // ===== Animation on Scroll ====
 window.addEventListener("load", function() {
-    AOS.init();
+    AOS.init({
+        once: true
+    });
 });
+
+// ==== Preloader ====
+$(window).on("load",function(){
+    $(".preloader").addClass("loaded");
+ })
+
 
 
 $(document).ready(function() {
@@ -48,4 +60,50 @@ $(document).ready(function() {
         } // End if
     });
 
+    // lightbox
+    $(".service-inner").click(function() {
+        index = $(this).index();
+        $(".lightbox").addClass("open");
+        lightboxSlideShow();
+    });
+
+    $(".lightbox .prev").click(function() {
+        if(index == 0) {
+            index = totalWorkItems - 1;
+        } else {
+            index--;
+        }
+        lightboxSlideShow();
+    });
+
+    $(".lightbox .next").click(function() {
+        if(index == totalWorkItems - 1) {
+            index = 0;
+        } else {
+            index++;
+        }
+        lightboxSlideShow();
+    });
+
+    // Close Lightbox
+    $(".lightbox-close").click(function() {
+        $(".lightbox").removeClass("open");
+    });
+
+    // Close lightbox when clicked outside of imgbox
+    $(".lightbox").click(function(event) {
+        if($(event.target).hasClass("lightbox")){
+            $(this).removeClass("open");
+        }
+    });
 });
+
+function lightboxSlideShow() {
+    const imgSrc = $(".service-inner").eq(index).find("img").attr("data-image");
+    const category = $('.service-inner').eq(index).find("h4").html()
+    const details = $('.service-inner').eq(index).find("p").html()
+    $(".lightbox-img").attr("src", imgSrc);
+    $(".lightbox-category").html(category); 
+    $(".lightbox-details").html(details);
+    $(".lightbox-counter").html((index+1) + "/" + totalWorkItems);
+}
