@@ -540,7 +540,7 @@ header.fixed .nav ul li a:hover,
 }
 
 .contact .contact-info {
-    padding: 2rem 2rem;
+    padding: 1rem;
 }
 
 .contact .contact-info .info-title {
@@ -641,10 +641,6 @@ header.fixed .nav ul li a:hover,
     font-size: 1.2rem;
 }
 
-/* .contact .information p.email {
-    text-align: left;
-} */
-
 .contact .social-media {
     padding: 0.5rem 0 0 0;
 }
@@ -687,7 +683,7 @@ header.fixed .nav ul li a:hover,
 @media (max-width: 850px) {
     .contact .information {
         display: block;
-        /* text-align: center; */
+        text-align: center;
     }
 }
 
