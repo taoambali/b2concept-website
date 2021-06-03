@@ -693,6 +693,12 @@ header.fixed .nav ul li a:hover,
     }
 }
 
+@media (max-width: 400px) {
+    .contact .information p {
+        font-size: 1rem;
+    }
+}
+
 /* ==== Footer ==== */
 .footer {
     background-color: #333;
